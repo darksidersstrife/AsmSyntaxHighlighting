@@ -19,6 +19,14 @@ namespace VSIXProject2
         [Name("AsmOpcode")]
         private static ClassificationTypeDefinition OpCodetypeDefinition;
 
+        [Export(typeof(ClassificationTypeDefinition))]
+        [Name("AsmRegister")]
+        private static ClassificationTypeDefinition RegistertypeDefinition;
+
+        [Export(typeof(ClassificationTypeDefinition))]
+        [Name("AsmNumber")]
+        private static ClassificationTypeDefinition NumbertypeDefinition;
+
 #pragma warning restore 169
     }
 }

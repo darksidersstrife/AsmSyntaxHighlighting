@@ -21,3 +21,39 @@ namespace VSIXProject2
             this.ForegroundColor = Colors.Blue;
         }
     }
+
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = "AsmRegister")]
+    [Name("AsmRegister")]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class RegisterClassifierFormat : ClassificationFormatDefinition
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditorClassifier1Format"/> class.
+        /// </summary>
+        public RegisterClassifierFormat()
+        {
+            this.DisplayName = "AsmOpcode";
+            this.BackgroundColor = Colors.LightYellow;
+            this.ForegroundColor = Colors.Gray;
+        }
+    }
+
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = "AsmNumber")]
+    [Name("AsmNumber")]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class NumberClassifierFormat : ClassificationFormatDefinition
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditorClassifier1Format"/> class.
+        /// </summary>
+        public NumberClassifierFormat()
+        {
+            this.DisplayName = "Number";
+            this.ForegroundColor = Colors.Orange;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\obj\Debug\AsmParser.csprojAssemblyReference.cache
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\obj\Debug\AsmParser.csproj.CoreCompileInputs.cache
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\bin\Debug\AsmParser.dll
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\bin\Debug\AsmParser.pdb
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\bin\Debug\Antlr4.Runtime.Standard.dll
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\bin\Debug\Antlr4.Runtime.Standard.xml
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\obj\Debug\AsmParser.csproj.CopyComplete
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\obj\Debug\AsmParser.dll
+C:\Users\Влад\Documents\Visual Studio 2017\Projects\AsmSyntaxHighlighter\AsmParser\obj\Debug\AsmParser.pdb

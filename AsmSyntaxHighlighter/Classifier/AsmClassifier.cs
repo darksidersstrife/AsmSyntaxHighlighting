@@ -22,11 +22,28 @@ namespace VSIXProject2
             _classificationTypes = classificationTypes;
         }
 
+        public override void EnterRegister_([NotNull] asm8086Parser.Register_Context context)
+        {
+            if (context.Start.StartIndex >= _span.Start && context.Start.StartIndex < _span.End || context.Stop.StopIndex > _span.Start && context.Stop.StopIndex <= _span.End)
+            {
+                ClassifiedSpans.Add(new ClassificationSpan(new SnapshotSpan(_span.Snapshot, context.Start.StartIndex, context.Stop.StopIndex + 1 - context.Start.StartIndex), _classificationTypes["Register"]));
+            }
+
+        }
+
         public override void EnterOpcode([NotNull] asm8086Parser.OpcodeContext context)
         {
             if (context.Start.StartIndex >= _span.Start && context.Start.StartIndex < _span.End || context.Stop.StopIndex >= _span.Start && context.Stop.StopIndex < _span.End)
             {
                 ClassifiedSpans.Add(new ClassificationSpan(new SnapshotSpan(_span.Snapshot, context.Start.StartIndex, context.Stop.StopIndex + 1 - context.Start.StartIndex), _classificationTypes["Opcode"]));
+            }
+        }
+
+        public override void EnterNumber([NotNull] asm8086Parser.NumberContext context)
+        {
+            if (context.Start.StartIndex >= _span.Start && context.Start.StartIndex < _span.End || context.Stop.StopIndex >= _span.Start && context.Stop.StopIndex < _span.End)
+            {
+                ClassifiedSpans.Add(new ClassificationSpan(new SnapshotSpan(_span.Snapshot, context.Start.StartIndex, context.Stop.StopIndex + 1 - context.Start.StartIndex), _classificationTypes["Number"]));
             }
         }
     }
@@ -49,6 +66,8 @@ namespace VSIXProject2
         {
             classificationTypes = new Dictionary<string, IClassificationType>();
             this.classificationTypes.Add("Opcode", registry.GetClassificationType("AsmOpcode"));
+            this.classificationTypes.Add("Register", registry.GetClassificationType("AsmRegister"));
+            this.classificationTypes.Add("Number", registry.GetClassificationType("AsmNumber"));
         }
 
         #region IClassifier
